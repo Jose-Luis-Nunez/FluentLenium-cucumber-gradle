@@ -17,7 +17,7 @@ class WebDriverFactory {
 
     private fun chrome(): WebDriver {
         WebDriverManager.chromedriver().setup()
-        return ChromeDriver(chromeOptions())
+        return ChromeDriver(chromeOptions().setHeadless(true))
     }
 
     private fun chromeOptions(): ChromeOptions {
