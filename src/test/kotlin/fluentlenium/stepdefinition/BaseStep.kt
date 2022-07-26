@@ -13,6 +13,8 @@ abstract class BaseStep : FluentCucumberTest() {
         return WebDriverFactory().defaultWebDriver().apply {
             manage().timeouts().pageLoadTimeout(ofSeconds(TIME_OUT))
             manage().timeouts().implicitlyWait(ofSeconds(TIME_OUT))
+            manage().timeouts().scriptTimeout(ofSeconds(15L))
+            manage().window().maximize()
         }
     }
 }
